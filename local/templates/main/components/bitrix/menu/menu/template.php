@@ -2,13 +2,9 @@
 <div class="header-menu">
 	<? if (!empty($arResult)) : ?>
 		<ul class="left-menu">
-			<?
-			foreach ($arResult as $arItem) :
-			?>
+			<? foreach ($arResult as $arItem) : ?>
 				<li class="menu-item"><a href="<?= $arItem['LINK'] ?>"><?= $arItem['TEXT'] ?></a></li>
-
 			<? endforeach ?>
-
 		</ul>
+	<? endif ?>
 </div>
-<? endif ?>
