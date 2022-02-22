@@ -25,12 +25,12 @@ $APPLICATION->SetTitle("Главная");
 			<!--      </div>-->
 			<div class="swiper-slide">
 				<div class="slide">
-					<img src="/images/slider/slide1.png" alt="">
+					<img src="<?= SITE_TEMPLATE_PATH ?>/images/slider/slide1.png" alt="">
 				</div>
 			</div>
 			<div class="swiper-slide">
 				<div class="slide">
-					<img src="/images/slider/slide1.png" alt="">
+					<img src="<?= SITE_TEMPLATE_PATH ?>/images/slider/slide1.png" alt="">
 				</div>
 			</div>
 		</div>
@@ -58,7 +58,7 @@ $APPLICATION->SetTitle("Главная");
 			</div>
 		</div>
 		<div class="card-image">
-			<img src="/images/card-1.png" alt="">
+			<img src="<?= SITE_TEMPLATE_PATH ?>/images/card-1.png" alt="">
 		</div>
 	</div>
 	<!---->
@@ -75,7 +75,7 @@ $APPLICATION->SetTitle("Главная");
 			</div>
 		</div>
 		<div data-aos="fade-right" class="card-image">
-			<img src="/images/card-2.png" alt="">
+			<img src="<?= SITE_TEMPLATE_PATH ?>/images/card-2.png" alt="">
 		</div>
 	</div>
 	<!---->
@@ -91,7 +91,7 @@ $APPLICATION->SetTitle("Главная");
 			</div>
 		</div>
 		<div class="card-image">
-			<img src="/images/card-3.png" alt="">
+			<img src="<?= SITE_TEMPLATE_PATH ?>/images/card-3.png" alt="">
 		</div>
 	</div>
 	<!---->
@@ -108,7 +108,7 @@ $APPLICATION->SetTitle("Главная");
 					на сайте</span>
 			</div>
 			<div class="line1">
-				<img src="/images/line1.svg" alt="">
+				<img src="<?= SITE_TEMPLATE_PATH ?>/images/line1.svg" alt="">
 			</div>
 			<div data-aos="zoom-out" class="step-item">
 				<div class="round_num round_num__left">
@@ -118,7 +118,7 @@ $APPLICATION->SetTitle("Главная");
 					и уточним все детали</span>
 			</div>
 			<div class="line2">
-				<img src="/images/line2.svg" alt="">
+				<img src="<?= SITE_TEMPLATE_PATH ?>/images/line2.svg" alt="">
 			</div>
 			<div data-aos="zoom-out" class="step-item">
 				<div class="round_num">
@@ -128,7 +128,7 @@ $APPLICATION->SetTitle("Главная");
 					все документы</span>
 			</div>
 			<div class="line3">
-				<img src="/images/line3.svg" alt="">
+				<img src="<?= SITE_TEMPLATE_PATH ?>/images/line3.svg" alt="">
 			</div>
 			<div data-aos="zoom-out" class="step-item">
 				<div class="round_num round_num__none">
@@ -147,10 +147,10 @@ $APPLICATION->SetTitle("Главная");
 			<div data-aos="fade-right" class="cond-item">
 				<h4>Условия работы</h4>
 				<div class="img_container">
-					<img src="/images/card-6.png" alt="">
+					<img src="<?= SITE_TEMPLATE_PATH ?>/images/card-6.png" alt="">
 				</div>
 				<div class="yandex_bottom">
-					<img src="/images/ya.png" alt="">
+					<img src="<?= SITE_TEMPLATE_PATH ?>/images/ya.png" alt="">
 					Подключаем ко всем тарифам Яндекс.Про
 				</div>
 			</div>
@@ -193,7 +193,7 @@ $APPLICATION->SetTitle("Главная");
 				</div>
 				<div class="condition-item_mobile">
 					<div class="yandex_bottom">
-						<img src="/images/ya.png" alt="">
+						<img src="<?= SITE_TEMPLATE_PATH ?>/images/ya.png" alt="">
 						Подключаем ко всем тарифам Яндекс.Про
 					</div>
 				</div>
@@ -213,7 +213,7 @@ $APPLICATION->SetTitle("Главная");
 				</div>
 			</div>
 			<div class="card-image">
-				<img src="/images/card-4.png" alt="">
+				<img src="<?= SITE_TEMPLATE_PATH ?>/images/card-4.png" alt="">
 			</div>
 		</div>
 		<!---->
@@ -224,28 +224,28 @@ $APPLICATION->SetTitle("Главная");
 		<div data-aos="fade-right" class="prizes">
 			<h2>Призы</h2>
 			<div class="prizes-item">
-				<img src="/images/iphone.png" alt="">
+				<img src="<?= SITE_TEMPLATE_PATH ?>/images/iphone.png" alt="">
 				<div class="prizes-item__container">
 					<h3>Iphone 12 Pro</h3>
 					128 ГБ
 				</div>
 			</div>
 			<div class="prizes-item">
-				<img src="/images/videorec.png" alt="">
+				<img src="<?= SITE_TEMPLATE_PATH ?>/images/videorec.png" alt="">
 				<div class="prizes-item__container">
 					<h3>Видеорегистратор</h3>
 					С умным ассистентом
 				</div>
 			</div>
 			<div class="prizes-item">
-				<img src="/images/lights.png" alt="">
+				<img src="<?= SITE_TEMPLATE_PATH ?>/images/lights.png" alt="">
 				<div class="prizes-item__container">
 					<h3>Фары</h3>
 					Универсальные
 				</div>
 			</div>
 			<div class="prizes-item">
-				<img src="/images/fuilstation.png" alt="">
+				<img src="<?= SITE_TEMPLATE_PATH ?>/images/fuilstation.png" alt="">
 				<div class="prizes-item__container">
 					<h3>Бесплатные заправки</h3>
 					Целую неделю
@@ -255,7 +255,7 @@ $APPLICATION->SetTitle("Главная");
 		<div data-aos="fade-left" class="winner">
 			<h2 class="text-center__ml-0">Победитель розыгрыша в сентябре</h2>
 			<div class="winner-img">
-				<img src="/images/winner.png" alt="">
+				<img src="<?= SITE_TEMPLATE_PATH ?>/images/winner.png" alt="">
 			</div>
 			<div class="winner_name">
 				Иван И.
@@ -336,7 +336,7 @@ $APPLICATION->SetTitle("Главная");
 	<div class="container">
 		<div data-aos="fade-up" class="card-container card-container__no_left card-container__lottery">
 			<div class="card-image">
-				<img src="/images/card-5.png" class="tender" alt="">
+				<img src="<?= SITE_TEMPLATE_PATH ?>/images/card-5.png" class="tender" alt="">
 			</div>
 			<div class="card-item card-item__vcenter">
 				<div>
@@ -358,7 +358,7 @@ $APPLICATION->SetTitle("Главная");
 					Яндекс.Такси</h2>
 			</div>
 			<div data-aos="zoom-in-left" class="card-taxi">
-				<img src="/images/taxi_bg.png" alt="">
+				<img src="<?= SITE_TEMPLATE_PATH ?>/images/taxi_bg.png" alt="">
 			</div>
 		</div>
 	</div>
