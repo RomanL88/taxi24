@@ -34,11 +34,11 @@
  -->
 					<a href="tel:<?= sprint_options_get('NUMBER') ?>" class="gray bt"><?= sprint_options_get('NUMBER') ?></a><br>
 
-					<a href="" target="_blank"><img src="/images/facebook.svg" alt=""></a>
-					<a href="" target="_blank"><img src="/images/youtube.svg" alt=""></a>
-					<a href="" target="_blank"><img src="/images/instagram.svg" alt=""></a>
-					<a href="" target="_blank"><img src="/images/telegram.svg" alt=""></a>
-					<a href="" target="_blank"><img src="/images/vk.svg" alt=""></a>
+					<a href="" target="_blank"><img src="<?= SITE_TEMPLATE_PATH ?>/images/facebook.svg" alt=""></a>
+					<a href="" target="_blank"><img src="<?= SITE_TEMPLATE_PATH ?>/images/youtube.svg" alt=""></a>
+					<a href="" target="_blank"><img src="<?= SITE_TEMPLATE_PATH ?>/images/instagram.svg" alt=""></a>
+					<a href="" target="_blank"><img src="<?= SITE_TEMPLATE_PATH ?>/images/telegram.svg" alt=""></a>
+					<a href="" target="_blank"><img src="<?= SITE_TEMPLATE_PATH ?>/images/vk.svg" alt=""></a>
 				</div>
 				<a href="https://wptt.ru" target="_blank" class="gray">Разработка сайта — Вебпространство</a>
 			</div>
@@ -57,11 +57,11 @@
 				<p>с 9:00 до 21:00, без выходных</p><br>
 				<div class="content">
 					<a href="tel:+79991234569" class="bt">+7 (999) 123-45-69</a><br><br>
-					<a href="" target="_blank"><img src="/images/facebook.svg" alt=""></a>
-					<a href="" target="_blank"><img src="/images/youtube.svg" alt=""></a>
-					<a href="" target="_blank"><img src="/images/instagram.svg" alt=""></a>
-					<a href="" target="_blank"><img src="/images/telegram.svg" alt=""></a>
-					<a href="" target="_blank"><img src="/images/vk.svg" alt=""></a>
+					<a href="" target="_blank"><img src="<?= SITE_TEMPLATE_PATH ?>/images/facebook.svg" alt=""></a>
+					<a href="" target="_blank"><img src="<?= SITE_TEMPLATE_PATH ?>/images/youtube.svg" alt=""></a>
+					<a href="" target="_blank"><img src="<?= SITE_TEMPLATE_PATH ?>/images/instagram.svg" alt=""></a>
+					<a href="" target="_blank"><img src="<?= SITE_TEMPLATE_PATH ?>/images/telegram.svg" alt=""></a>
+					<a href="" target="_blank"><img src="<?= SITE_TEMPLATE_PATH ?>/images/vk.svg" alt=""></a>
 				</div>
 				<br>
 				<a class="gray" id="privacy">Политика конфиденциальности</a>

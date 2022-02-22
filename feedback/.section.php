@@ -1,6 +1,3 @@
 <?
-$sSectionName = "feedback";
-$arDirProperties = Array(
-
-);
+$sSectionName="Контакты";
 ?>
