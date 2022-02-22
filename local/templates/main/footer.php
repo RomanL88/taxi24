@@ -1,14 +1,23 @@
 <?
+
+use Bitrix\Main\Localization\Loc;
+
+Loc::loadMessages(__FILE__);
+
+?>
+<?
 /* if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	die(); */
+
 ?>
+
 <footer id="footer">
 	<!--  desktop-->
 	<div class="container container-footer">
 		<div class="footer-content">
 			<div class="footer-item">
 				<h2><?= GetMessage('CONTACTS'); ?></h2>
-				<span class="gray">© <?= date('Y'); ?> <?= GetMessage('SITE_NAME'); ?></span>
+				<span class="gray">© <?= date('Y'); ?> <?= Loc::getMessage("SITE_NAME"); ?></span>
 			</div>
 
 			<div class="footer-item__addr">
@@ -40,7 +49,7 @@
 					<a href="" target="_blank"><img src="<?= SITE_TEMPLATE_PATH ?>/images/telegram.svg" alt=""></a>
 					<a href="" target="_blank"><img src="<?= SITE_TEMPLATE_PATH ?>/images/vk.svg" alt=""></a>
 				</div>
-				<a href="https://wptt.ru" target="_blank" class="gray"><?= GetMessage('WEBSITE_DEVELOPER'); ?></a>
+				<a href="https://wptt.ru" target="_blank" class="gray"><?= GetMessage('WEBSITE_DEVELOPER') ?></a>
 			</div>
 		</div>
 	</div>
@@ -50,8 +59,8 @@
 			<div class="">
 				<h2><?= GetMessage('CONTACTS'); ?></h2>
 				<br>
-				<p style="padding-bottom: 24px"><?= sprint_options_get('ADDRESS') ?></p>
-				<p><?= GetMessage('OFFICE_HOURS'); ?></p>
+				<p style="padding-bottom: 24px"><?= sprint_options_get('ADDRESS'); ?></p>
+				<p><?= GetMessage('OFFICE_HOURS_NAME') ?></p>
 				<p><?= sprint_options_get('OFFICE_HOURS') ?></p>
 				<p><?= GetMessage('DISPATCHER\'S_WORKING_HOURS'); ?></p>
 				<p><?= sprint_options_get('Dispatcher\'s working hours') ?></p><br>
