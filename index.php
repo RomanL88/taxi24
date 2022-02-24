@@ -40,7 +40,13 @@ $APPLICATION->SetTitle("Главная");
 </div>
 <section class="privilege" id="about">
 	<h2 class="text-center"></h2>
-	<h2 class="text-center">С нами удобно и выгодно</h2>
+	<!-- <h2 class="text-center">С нами удобно и выгодно</h2> -->
+	<h2 class="text-center">
+		<a href="<?= '/get_started/' ?>">
+			С нами удобно и выгодно
+		</a>
+	</h2>
+
 	<!-- слайдер -->
 </section> <? $APPLICATION->IncludeComponent(
 				"bitrix:news.list",
