@@ -12,6 +12,7 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+
 <section class="privilege" id="about">
 	<div class="container">
 		<h2 class="text-center"><a href="/about/">С нами удобно и выгодно</a></h2>
@@ -24,7 +25,8 @@ $this->setFrameMode(true);
 			<div data-aos="fade-down" class="card-container" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
 				<div class=" card-item">
 					<div class="item-headline">
-						<span>01.</span>
+						<!-- <span>01.</span> -->
+						<span><?= counter($arItem) ?></span>
 						<h2><?= $arItem["NAME"] ?></h2>
 					</div>
 					<div class="item-desc">
