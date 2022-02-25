@@ -6,8 +6,8 @@ Loc::loadMessages(__FILE__);
 
 ?>
 <?
-/* if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
-	die(); */
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
+	die();
 
 ?>
 
@@ -22,14 +22,11 @@ Loc::loadMessages(__FILE__);
 
 			<div class="footer-item__addr">
 				<div class="">
-					<!-- <p style="padding-bottom: 24px">г. Уфа, ул. Тестовая, д. 28, стр. 1, офис 205</p> -->
 					<p style="padding-bottom: 24px"><?= sprint_options_get('ADDRESS') ?></p>
 
 					<p><?= GetMessage('OFFICE_HOURS'); ?></p>
-					<!-- <p>Пн-пт с 10:00 до 19:00</p> -->
 					<p><?= sprint_options_get('OFFICE_HOURS') ?></p>
 					<p><?= GetMessage('DISPATCHER\'S_WORKING_HOURS'); ?></p>
-					<!-- <p>с 9:00 до 21:00, без выходных</p><br><br> -->
 					<p><?= sprint_options_get('Dispatcher\'s working hours') ?></p><br><br>
 				</div>
 				<div class="">
@@ -39,8 +36,6 @@ Loc::loadMessages(__FILE__);
 
 			<div class="footer-item">
 				<div class="">
-					<!-- 					<a href="tel:+79991234569" class="gray bt">+7 (999) 123-45-69</a><br>
- -->
 					<a href="tel:<?= sprint_options_get('NUMBER') ?>" class="gray bt"><?= sprint_options_get('NUMBER') ?></a><br>
 
 					<a href="" target="_blank"><img src="<?= SITE_TEMPLATE_PATH ?>/images/facebook.svg" alt=""></a>
