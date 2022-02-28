@@ -15,13 +15,20 @@ $this->setFrameMode(true);
 
 <section class="privilege" id="about">
 	<div class="container">
+		<?php $i = 1;
+		echo '<pre>';
+		var_dump($arResult["ITEMS"]);
+		echo '</pre>';
+
+		?>
 		<h2 class="text-center"><a href="/about/">С нами удобно и выгодно</a></h2>
 		<? foreach ($arResult["ITEMS"] as $arItem) : ?>
 			<?
 			$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 			$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 			?>
-
+			<?php $arItem['ADDED_COUNTER'] = $i;
+			$i++; ?>
 			<div data-aos="fade-down" class="card-container" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
 				<div class=" card-item">
 					<div class="item-headline">
