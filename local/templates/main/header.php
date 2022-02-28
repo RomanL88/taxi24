@@ -4,8 +4,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 
 use Bitrix\Main\Page\Asset;
 
-// подключаю стили 
-
+/*  подключаю стили  */
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/style.css');
 Asset::getInstance()
 	->addString('<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">');
@@ -13,19 +12,15 @@ Asset::getInstance()
 	->addString('<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">');
 Asset::getInstance()
 	->addString('<link href="https://unpkg.com/swiper@7/swiper-bundle.min.css" rel="stylesheet">');
+	<!-- корректно подключаю скрипты -->
+
+	/* подключаю скрипты */
+Asset::getInstance()->addJs("https://unpkg.com/swiper@7/swiper-bundle.min.js");
+Asset::getInstance()->addJs("js/main.js");
+Asset::getInstance()->addJs("js/aos.js");
+Asset::getInstance()->addJs(AOS . init());
+
 ?>
-<!-- <!DOCTYPE html>
-<html>
-
-<head>
-	<? //$APPLICATION->ShowHead(); 
-	?>
-	<title></title>
-	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-</head>
-
-<body>
-	 -->
 
 <!-- подключаю страницу -->
 
@@ -36,12 +31,6 @@ Asset::getInstance()
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-
-
-
-	<?php /*$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . './css/aos.css'); */ ?>
-
 
 	<script src="<? CUtil::GetAdditionalFileURL('https://unpkg.com/swiper@7/swiper-bundle.min.js') ?>"></script>
 	<title><?php $APPLICATION->ShowTitle(); ?></title>

@@ -66,12 +66,6 @@
 </footer>
 
 <a class="back_to_top" title="Наверх"></a>
-<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-<script src="js/main.js"></script>
-<script src="js/aos.js"></script>
-<script>
-	AOS.init();
-</script>
 </body>
 
 </html>
