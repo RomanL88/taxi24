@@ -17,5 +17,5 @@
 				</ul>
 			</div>
 		</div>
+	<? endif ?>
 </div>
-<? endif ?>
