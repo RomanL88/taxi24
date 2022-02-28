@@ -1,4 +1,4 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 /** @var array $arParams */
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
@@ -12,10 +12,13 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<?$ElementID = $APPLICATION->IncludeComponent(
+<!-- вернуться к списку -->
+<p><a href="<?= $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["news"] ?>"><?= 'Назад' ?></a></p>
+<!---->
+<? $ElementID = $APPLICATION->IncludeComponent(
 	"bitrix:news.detail",
 	"",
-	Array(
+	array(
 		"DISPLAY_DATE" => $arParams["DISPLAY_DATE"],
 		"DISPLAY_NAME" => $arParams["DISPLAY_NAME"],
 		"DISPLAY_PICTURE" => $arParams["DISPLAY_PICTURE"],
@@ -24,8 +27,8 @@ $this->setFrameMode(true);
 		"IBLOCK_ID" => $arParams["IBLOCK_ID"],
 		"FIELD_CODE" => $arParams["DETAIL_FIELD_CODE"],
 		"PROPERTY_CODE" => $arParams["DETAIL_PROPERTY_CODE"],
-		"DETAIL_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["detail"],
-		"SECTION_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["section"],
+		"DETAIL_URL" => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["detail"],
+		"SECTION_URL" => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["section"],
 		"META_KEYWORDS" => $arParams["META_KEYWORDS"],
 		"META_DESCRIPTION" => $arParams["META_DESCRIPTION"],
 		"BROWSER_TITLE" => $arParams["BROWSER_TITLE"],
@@ -56,7 +59,7 @@ $this->setFrameMode(true);
 		"ELEMENT_CODE" => $arResult["VARIABLES"]["ELEMENT_CODE"],
 		"SECTION_ID" => $arResult["VARIABLES"]["SECTION_ID"],
 		"SECTION_CODE" => $arResult["VARIABLES"]["SECTION_CODE"],
-		"IBLOCK_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["news"],
+		"IBLOCK_URL" => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["news"],
 		"USE_SHARE" => $arParams["USE_SHARE"],
 		"SHARE_HIDE" => $arParams["SHARE_HIDE"],
 		"SHARE_TEMPLATE" => $arParams["SHARE_TEMPLATE"],
@@ -67,66 +70,61 @@ $this->setFrameMode(true);
 		'STRICT_SECTION_CHECK' => (isset($arParams['STRICT_SECTION_CHECK']) ? $arParams['STRICT_SECTION_CHECK'] : ''),
 	),
 	$component
-);?>
-<p><a href="<?=$arResult["FOLDER"].$arResult["URL_TEMPLATES"]["news"]?>"><?=GetMessage("T_NEWS_DETAIL_BACK")?></a></p>
-<?if($arParams["USE_RATING"]=="Y" && $ElementID):?>
-<?$APPLICATION->IncludeComponent(
-	"bitrix:iblock.vote",
-	"",
-	Array(
-		"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
-		"IBLOCK_ID" => $arParams["IBLOCK_ID"],
-		"ELEMENT_ID" => $ElementID,
-		"MAX_VOTE" => $arParams["MAX_VOTE"],
-		"VOTE_NAMES" => $arParams["VOTE_NAMES"],
-		"CACHE_TYPE" => $arParams["CACHE_TYPE"],
-		"CACHE_TIME" => $arParams["CACHE_TIME"],
-	),
-	$component
-);?>
-<?endif?>
-<?if($arParams["USE_CATEGORIES"]=="Y" && $ElementID):
+); ?>
+
+<? if ($arParams["USE_RATING"] == "Y" && $ElementID) : ?>
+	<? $APPLICATION->IncludeComponent(
+		"bitrix:iblock.vote",
+		"",
+		array(
+			"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
+			"IBLOCK_ID" => $arParams["IBLOCK_ID"],
+			"ELEMENT_ID" => $ElementID,
+			"MAX_VOTE" => $arParams["MAX_VOTE"],
+			"VOTE_NAMES" => $arParams["VOTE_NAMES"],
+			"CACHE_TYPE" => $arParams["CACHE_TYPE"],
+			"CACHE_TIME" => $arParams["CACHE_TIME"],
+		),
+		$component
+	); ?>
+<? endif ?>
+<? if ($arParams["USE_CATEGORIES"] == "Y" && $ElementID) :
 	global $arCategoryFilter;
 	$obCache = new CPHPCache;
-	$strCacheID = $componentPath.LANG.$arParams["IBLOCK_ID"].$ElementID.$arParams["CATEGORY_CODE"];
-	if(($tzOffset = CTimeZone::GetOffset()) <> 0)
-		$strCacheID .= "_".$tzOffset;
-	if($arParams["CACHE_TYPE"] == "N" || $arParams["CACHE_TYPE"] == "A" && COption::GetOptionString("main", "component_cache_on", "Y") == "N")
+	$strCacheID = $componentPath . LANG . $arParams["IBLOCK_ID"] . $ElementID . $arParams["CATEGORY_CODE"];
+	if (($tzOffset = CTimeZone::GetOffset()) <> 0)
+		$strCacheID .= "_" . $tzOffset;
+	if ($arParams["CACHE_TYPE"] == "N" || $arParams["CACHE_TYPE"] == "A" && COption::GetOptionString("main", "component_cache_on", "Y") == "N")
 		$CACHE_TIME = 0;
 	else
 		$CACHE_TIME = $arParams["CACHE_TIME"];
-	if($obCache->StartDataCache($CACHE_TIME, $strCacheID, $componentPath))
-	{
-		$rsProperties = CIBlockElement::GetProperty($arParams["IBLOCK_ID"], $ElementID, "sort", "asc", array("ACTIVE"=>"Y","CODE"=>$arParams["CATEGORY_CODE"]));
+	if ($obCache->StartDataCache($CACHE_TIME, $strCacheID, $componentPath)) {
+		$rsProperties = CIBlockElement::GetProperty($arParams["IBLOCK_ID"], $ElementID, "sort", "asc", array("ACTIVE" => "Y", "CODE" => $arParams["CATEGORY_CODE"]));
 		$arCategoryFilter = array();
-		while($arProperty = $rsProperties->Fetch())
-		{
-			if(is_array($arProperty["VALUE"]) && count($arProperty["VALUE"])>0)
-			{
-				foreach($arProperty["VALUE"] as $value)
-					$arCategoryFilter[$value]=true;
-			}
-			elseif(!is_array($arProperty["VALUE"]) && $arProperty["VALUE"] <> '')
-				$arCategoryFilter[$arProperty["VALUE"]]=true;
+		while ($arProperty = $rsProperties->Fetch()) {
+			if (is_array($arProperty["VALUE"]) && count($arProperty["VALUE"]) > 0) {
+				foreach ($arProperty["VALUE"] as $value)
+					$arCategoryFilter[$value] = true;
+			} elseif (!is_array($arProperty["VALUE"]) && $arProperty["VALUE"] <> '')
+				$arCategoryFilter[$arProperty["VALUE"]] = true;
 		}
 		$obCache->EndDataCache($arCategoryFilter);
-	}
-	else
-	{
+	} else {
 		$arCategoryFilter = $obCache->GetVars();
 	}
-	if(count($arCategoryFilter)>0):
+	if (count($arCategoryFilter) > 0) :
 		$arCategoryFilter = array(
-			"PROPERTY_".$arParams["CATEGORY_CODE"] => array_keys($arCategoryFilter),
-			"!"."ID" => $ElementID,
+			"PROPERTY_" . $arParams["CATEGORY_CODE"] => array_keys($arCategoryFilter),
+			"!" . "ID" => $ElementID,
 		);
-		?>
-		<hr /><h3><?=GetMessage("CATEGORIES")?></h3>
-		<?foreach($arParams["CATEGORY_IBLOCK"] as $iblock_id):?>
-			<?$APPLICATION->IncludeComponent(
+?>
+		<hr />
+		<h3><?= GetMessage("CATEGORIES") ?></h3>
+		<? foreach ($arParams["CATEGORY_IBLOCK"] as $iblock_id) : ?>
+			<? $APPLICATION->IncludeComponent(
 				"bitrix:news.list",
-				$arParams["CATEGORY_THEME_".$iblock_id],
-				Array(
+				$arParams["CATEGORY_THEME_" . $iblock_id],
+				array(
 					"IBLOCK_ID" => $iblock_id,
 					"NEWS_COUNT" => $arParams["CATEGORY_ITEMS_COUNT"],
 					"SET_TITLE" => "N",
@@ -140,30 +138,64 @@ $this->setFrameMode(true);
 					"DISPLAY_BOTTOM_PAGER" => "N",
 				),
 				$component
-			);?>
-		<?endforeach?>
-	<?endif?>
-<?endif?>
-<?if($arParams["USE_REVIEW"]=="Y" && IsModuleInstalled("forum") && $ElementID):?>
-<hr />
-<?$APPLICATION->IncludeComponent(
-	"bitrix:forum.topic.reviews",
-	"",
-	Array(
-		"CACHE_TYPE" => $arParams["CACHE_TYPE"],
-		"CACHE_TIME" => $arParams["CACHE_TIME"],
-		"MESSAGES_PER_PAGE" => $arParams["MESSAGES_PER_PAGE"],
-		"USE_CAPTCHA" => $arParams["USE_CAPTCHA"],
-		"PATH_TO_SMILE" => $arParams["PATH_TO_SMILE"],
-		"FORUM_ID" => $arParams["FORUM_ID"],
-		"URL_TEMPLATES_READ" => $arParams["URL_TEMPLATES_READ"],
-		"SHOW_LINK_TO_FORUM" => $arParams["SHOW_LINK_TO_FORUM"],
-		"DATE_TIME_FORMAT" => $arParams["DETAIL_ACTIVE_DATE_FORMAT"],
-		"ELEMENT_ID" => $ElementID,
-		"AJAX_POST" => $arParams["REVIEW_AJAX_POST"],
-		"IBLOCK_ID" => $arParams["IBLOCK_ID"],
-		"URL_TEMPLATES_DETAIL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["detail"],
-	),
-	$component
-);?>
-<?endif?>
+			); ?>
+		<? endforeach ?>
+	<? endif ?>
+<? endif ?>
+<? if ($arParams["USE_REVIEW"] == "Y" && IsModuleInstalled("forum") && $ElementID) : ?>
+	<hr />
+	<? $APPLICATION->IncludeComponent(
+		"bitrix:forum.topic.reviews",
+		"",
+		array(
+			"CACHE_TYPE" => $arParams["CACHE_TYPE"],
+			"CACHE_TIME" => $arParams["CACHE_TIME"],
+			"MESSAGES_PER_PAGE" => $arParams["MESSAGES_PER_PAGE"],
+			"USE_CAPTCHA" => $arParams["USE_CAPTCHA"],
+			"PATH_TO_SMILE" => $arParams["PATH_TO_SMILE"],
+			"FORUM_ID" => $arParams["FORUM_ID"],
+			"URL_TEMPLATES_READ" => $arParams["URL_TEMPLATES_READ"],
+			"SHOW_LINK_TO_FORUM" => $arParams["SHOW_LINK_TO_FORUM"],
+			"DATE_TIME_FORMAT" => $arParams["DETAIL_ACTIVE_DATE_FORMAT"],
+			"ELEMENT_ID" => $ElementID,
+			"AJAX_POST" => $arParams["REVIEW_AJAX_POST"],
+			"IBLOCK_ID" => $arParams["IBLOCK_ID"],
+			"URL_TEMPLATES_DETAIL" => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["detail"],
+		),
+		$component
+	); ?>
+<? endif ?>
+
+<!-- прикрепить документ для скачивания -->
+<!-- при переходе по ссылке должно сразу происходить скачивание файла -->
+
+
+<!-- Собственно сам input -->
+<form action="" method="POST">
+	<? foreach ($_POST["NEW_FILE_UPLOAD"] as $key => $item) : ?>
+		<? $img = htmlspecialchars($item); ?>
+		<!-- показать фото на экране -->
+		<!-- <img src="<? //= CFIle::GetPath($img) 
+						?>" width="150px"> -->
+
+	<? endforeach ?>
+	<? $APPLICATION->IncludeComponent(
+		"bitrix:main.file.input",
+		"drag_n_drop",
+		array(
+			"INPUT_NAME" => "NEW_FILE_UPLOAD",
+			"MULTIPLE" => "Y",
+			"MODULE_ID" => "main",
+			"MAX_FILE_SIZE" => "",
+			"ALLOW_UPLOAD" => "A",
+			"ALLOW_UPLOAD_EXT" => "",
+			"INPUT_CAPTION" => "Добавить фото",
+			"INPUT_VALUE" => $_POST['NEW_FILE_UPLOAD']
+		),
+		false
+	); ?>
+	<input class="pic" type="text" value="" id="newF">
+	<input type="submit" value="Отправить">
+</form>
+<!-- ссылка для скачивания фото-->
+<a href="<?= CFIle::GetPath($img) ?>" download="" title="ссылка для скачивания">скачать фото</a>
