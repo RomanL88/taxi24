@@ -5,6 +5,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 use Bitrix\Main\Page\Asset;
 
 /*  подключаю стили  */
+
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/style.css');
 Asset::getInstance()
 	->addString('<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">');
@@ -12,15 +13,14 @@ Asset::getInstance()
 	->addString('<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">');
 Asset::getInstance()
 	->addString('<link href="https://unpkg.com/swiper@7/swiper-bundle.min.css" rel="stylesheet">');
-	<!-- корректно подключаю скрипты -->
 
-	/* подключаю скрипты */
+/* подключаю скрипты */
 Asset::getInstance()->addJs("https://unpkg.com/swiper@7/swiper-bundle.min.js");
-Asset::getInstance()->addJs("js/main.js");
-Asset::getInstance()->addJs("js/aos.js");
-Asset::getInstance()->addJs(AOS . init());
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "js/main.js");
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "js/aos.js");
 Asset::getInstance()->addJs("https://unpkg.com/swiper@7/swiper-bundle.min.js");
-
+Asset::getInstance()
+	->addString('<script>' . AOS . init() . '</script>');
 ?>
 
 <!-- подключаю страницу -->
@@ -45,7 +45,7 @@ Asset::getInstance()->addJs("https://unpkg.com/swiper@7/swiper-bundle.min.js");
 	<header class="header-wrapper">
 		<div class="container header-container">
 			<div class="header-logo animate__animated animate__lightSpeedInLeft ">
-				<img src="/images/logo.svg" alt="">
+				<img src="<?= SITE_TEMPLATE_PATH; ?>/images/logo.svg" alt="">
 			</div>
 			<!-- menu -->
 			<? $APPLICATION->IncludeComponent(
