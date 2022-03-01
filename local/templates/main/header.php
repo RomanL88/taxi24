@@ -19,6 +19,7 @@ Asset::getInstance()->addJs("https://unpkg.com/swiper@7/swiper-bundle.min.js");
 Asset::getInstance()->addJs("js/main.js");
 Asset::getInstance()->addJs("js/aos.js");
 Asset::getInstance()->addJs(AOS . init());
+Asset::getInstance()->addJs("https://unpkg.com/swiper@7/swiper-bundle.min.js");
 
 ?>
 
@@ -31,8 +32,6 @@ Asset::getInstance()->addJs(AOS . init());
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-	<script src="<? CUtil::GetAdditionalFileURL('https://unpkg.com/swiper@7/swiper-bundle.min.js') ?>"></script>
 	<title><?php $APPLICATION->ShowTitle(); ?></title>
 	<?php $APPLICATION->ShowHead(); //выведет все нужные теги
 	?>
@@ -62,7 +61,7 @@ Asset::getInstance()->addJs(AOS . init());
 					"MENU_CACHE_TYPE" => "A",	// Тип кеширования
 					"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
 					"ROOT_MENU_TYPE" => "main",	// Тип меню для первого уровня
-					"USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+					"USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
 					"COMPONENT_TEMPLATE" => "menu"
 				),
 				false
@@ -80,7 +79,7 @@ Asset::getInstance()->addJs(AOS . init());
 					"MENU_CACHE_TYPE" => "A",	// Тип кеширования
 					"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
 					"ROOT_MENU_TYPE" => "main",	// Тип меню для первого уровня
-					"USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+					"USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
 					"COMPONENT_TEMPLATE" => "menu"
 				),
 				false
