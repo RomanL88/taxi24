@@ -18,9 +18,9 @@ Asset::getInstance()
 Asset::getInstance()->addJs("https://unpkg.com/swiper@7/swiper-bundle.min.js");
 Asset::getInstance()->addJs("js/main.js");
 Asset::getInstance()->addJs("js/aos.js");
-Asset::getInstance()->addJs(AOS . init());
 Asset::getInstance()->addJs("https://unpkg.com/swiper@7/swiper-bundle.min.js");
-
+Asset::getInstance()
+	->addString('<script>' . AOS . init() . '</script>');
 ?>
 
 <!-- подключаю страницу -->
