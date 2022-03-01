@@ -45,7 +45,7 @@ Asset::getInstance()->addJs("https://unpkg.com/swiper@7/swiper-bundle.min.js");
 	<header class="header-wrapper">
 		<div class="container header-container">
 			<div class="header-logo animate__animated animate__lightSpeedInLeft ">
-				<img src="/images/logo.svg" alt="">
+			<img src="<?= SITE_TEMPLATE_PATH; ?>/images/logo.svg" alt="">
 			</div>
 			<!-- menu -->
 			<? $APPLICATION->IncludeComponent(
