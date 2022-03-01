@@ -18,7 +18,8 @@ Asset::getInstance()
 Asset::getInstance()->addJs("https://unpkg.com/swiper@7/swiper-bundle.min.js");
 Asset::getInstance()->addJs("js/main.js");
 Asset::getInstance()->addJs("js/aos.js");
-Asset::getInstance()->addJs(AOS . init());
+Asset::getInstance()
+	->addString('<script>' . AOS . init() . '</script>');
 ?>
 
 
@@ -42,7 +43,7 @@ Asset::getInstance()->addJs(AOS . init());
 	<header class="header-wrapper">
 		<div class="container header-container">
 			<div class="header-logo animate__animated animate__lightSpeedInLeft ">
-				<img src="/images/logo.svg" alt="">
+				<img src="<?= SITE_TEMPLATE_PATH; ?>/images/logo.svg" alt="">
 			</div>
 			<!-- menu -->
 			<? $APPLICATION->IncludeComponent(
