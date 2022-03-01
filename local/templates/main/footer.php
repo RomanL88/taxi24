@@ -10,7 +10,6 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	die();
 
 ?>
-
 <footer id="footer">
 	<!--  desktop-->
 	<div class="container container-footer">
@@ -36,6 +35,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 
 			<div class="footer-item">
 				<div class="">
+
 					<a href="tel:<?= sprint_options_get('NUMBER') ?>" class="gray bt"><?= sprint_options_get('NUMBER') ?></a><br>
 
 					<a href="" target="_blank"><img src="<?= SITE_TEMPLATE_PATH ?>/images/facebook.svg" alt=""></a>
@@ -77,6 +77,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	</div>
 </footer>
 
+
 <a class="back_to_top" title="><?= GetMessage('UP'); ?>"></a>
 <?php
 $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . '/https://unpkg.com/swiper@7/swiper-bundle.min.js');
@@ -90,6 +91,7 @@ $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . '/js/aos.js');
 <script>
 	AOS.init();
 </script>
+
 </body>
 
 </html>
