@@ -3,7 +3,6 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	die();
 
 use Bitrix\Main\Page\Asset;
-
 /*  подключаю стили  */
 
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/style.css');
@@ -21,10 +20,8 @@ Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "js/aos.js");
 Asset::getInstance()
 	->addString("<script>AOS.init();</script>");
 Asset::getInstance()->addJs("https://unpkg.com/swiper@7/swiper-bundle.min.js");
-
 ?>
 
-<!-- подключаю страницу -->
 
 <!doctype html>
 <html lang="ru">
@@ -46,7 +43,7 @@ Asset::getInstance()->addJs("https://unpkg.com/swiper@7/swiper-bundle.min.js");
 	<header class="header-wrapper">
 		<div class="container header-container">
 			<div class="header-logo animate__animated animate__lightSpeedInLeft ">
-				<img src="<?= SITE_TEMPLATE_PATH; ?>/images/logo.svg" alt="">
+				<img src="<?= SITE_TEMPLATE_PATH; ?>/images/logo.svg" alt=".">
 			</div>
 			<!-- menu -->
 			<? $APPLICATION->IncludeComponent(

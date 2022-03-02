@@ -2,35 +2,35 @@
 $aMenuLinks = array(
 	array(
 		"О таксопарке",
-		"/about/",
+		"/about/index.php",
 		array(),
 		array(),
 		""
 	),
 	array(
 		"Начать работать",
-		"/get_started/",
+		"/get_started/index.php",
 		array(),
 		array(),
 		""
 	),
 	array(
 		"Расчет зарплаты",
-		"/payment/",
+		"/payment/index.php",
 		array(),
 		array(),
 		""
 	),
 	array(
 		"Вопросы и ответы",
-		"/question_answer/",
+		"/question_answer/index.php",
 		array(),
 		array(),
 		""
 	),
 	array(
 		"Контакты",
-		"/feedback/",
+		"/feedback/index.php",
 		array(),
 		array(),
 		""
