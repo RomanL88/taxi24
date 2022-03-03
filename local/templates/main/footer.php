@@ -77,19 +77,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	</div>
 </footer>
 
-<a class="back_to_top" title="><?= GetMessage('UP'); ?>"></a>
-<?php
-$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . '/https://unpkg.com/swiper@7/swiper-bundle.min.js');
-?>
-<?php
-$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . '/js/main.js');
-?>
-<?php
-$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . '/js/aos.js');
-?>
-<script>
-	AOS.init();
-</script>
+<a class="back_to_top" title="Наверх"></a>
 </body>
 
 </html>

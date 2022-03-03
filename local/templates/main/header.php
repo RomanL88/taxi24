@@ -4,7 +4,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 
 use Bitrix\Main\Page\Asset;
 
-// подключаю стили 
+/*  подключаю стили  */
 
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/style.css');
 Asset::getInstance()
@@ -13,19 +13,16 @@ Asset::getInstance()
 	->addString('<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">');
 Asset::getInstance()
 	->addString('<link href="https://unpkg.com/swiper@7/swiper-bundle.min.css" rel="stylesheet">');
+
+/* подключаю скрипты */
+Asset::getInstance()->addJs("https://unpkg.com/swiper@7/swiper-bundle.min.js");
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "js/main.js");
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "js/aos.js");
+Asset::getInstance()
+	->addString("<script>AOS.init();</script>");
+Asset::getInstance()->addJs("https://unpkg.com/swiper@7/swiper-bundle.min.js");
+
 ?>
-<!-- <!DOCTYPE html>
-<html>
-
-<head>
-	<? //$APPLICATION->ShowHead(); 
-	?>
-	<title></title>
-	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-</head>
-
-<body>
-	 -->
 
 <!-- подключаю страницу -->
 
@@ -36,14 +33,6 @@ Asset::getInstance()
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-
-
-
-	<?php /*$APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . './css/aos.css'); */ ?>
-
-
-	<script src="<? CUtil::GetAdditionalFileURL('https://unpkg.com/swiper@7/swiper-bundle.min.js') ?>"></script>
 	<title><?php $APPLICATION->ShowTitle(); ?></title>
 	<?php $APPLICATION->ShowHead(); //выведет все нужные теги
 	?>
@@ -57,7 +46,7 @@ Asset::getInstance()
 	<header class="header-wrapper">
 		<div class="container header-container">
 			<div class="header-logo animate__animated animate__lightSpeedInLeft ">
-				<img src="/images/logo.svg" alt="">
+				<img src="<?= SITE_TEMPLATE_PATH; ?>/images/logo.svg" alt="">
 			</div>
 			<!-- menu -->
 			<? $APPLICATION->IncludeComponent(
@@ -73,7 +62,7 @@ Asset::getInstance()
 					"MENU_CACHE_TYPE" => "A",	// Тип кеширования
 					"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
 					"ROOT_MENU_TYPE" => "main",	// Тип меню для первого уровня
-					"USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+					"USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
 					"COMPONENT_TEMPLATE" => "menu"
 				),
 				false
@@ -91,7 +80,7 @@ Asset::getInstance()
 					"MENU_CACHE_TYPE" => "A",	// Тип кеширования
 					"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
 					"ROOT_MENU_TYPE" => "main",	// Тип меню для первого уровня
-					"USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+					"USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
 					"COMPONENT_TEMPLATE" => "menu"
 				),
 				false
