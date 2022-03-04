@@ -38,11 +38,11 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 				<div class="">
 					<a href="tel:<?= sprint_options_get('NUMBER') ?>" class="gray bt"><?= sprint_options_get('NUMBER') ?></a><br>
 
-					<a href="" target="_blank"><img src="<?= SITE_TEMPLATE_PATH ?>/images/facebook.svg" alt=""></a>
-					<a href="" target="_blank"><img src="<?= SITE_TEMPLATE_PATH ?>/images/youtube.svg" alt=""></a>
-					<a href="" target="_blank"><img src="<?= SITE_TEMPLATE_PATH ?>/images/instagram.svg" alt=""></a>
-					<a href="" target="_blank"><img src="<?= SITE_TEMPLATE_PATH ?>/images/telegram.svg" alt=""></a>
-					<a href="" target="_blank"><img src="<?= SITE_TEMPLATE_PATH ?>/images/vk.svg" alt=""></a>
+					<a href="<?= sprint_options_get('LINK_TO_FASEBOOK') ?>" target="_blank"><img src="<?= SITE_TEMPLATE_PATH ?>/images/facebook.svg" alt=""></a>
+					<a href="<?= sprint_options_get('LINK_TO_YOUTUBE') ?>" target="_blank"><img src="<?= SITE_TEMPLATE_PATH ?>/images/youtube.svg" alt=""></a>
+					<a href="<?= sprint_options_get('LINK_TO_INSTAGRAM') ?>" target="_blank"><img src="<?= SITE_TEMPLATE_PATH ?>/images/instagram.svg" alt=""></a>
+					<a href="<?= sprint_options_get('LINK_TO_TELEGRAM') ?>" target="_blank"><img src="<?= SITE_TEMPLATE_PATH ?>/images/telegram.svg" alt=""></a>
+					<a href="<?= sprint_options_get('LINK_TO_VK') ?>" target="_blank"><img src="<?= SITE_TEMPLATE_PATH ?>/images/vk.svg" alt=""></a>
 				</div>
 				<a href="https://wptt.ru" target="_blank" class="gray"><?= Loc::getMessage('WEBSITE_DEVELOPER') ?></a>
 			</div>
