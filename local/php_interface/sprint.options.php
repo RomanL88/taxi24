@@ -6,7 +6,7 @@ return (new Builder)
     ->setTitle('Настройки контента')
     ->setSort(60)
     ->addPage('Страница 1')
-    ->addTab('Связь с компанией')
+    ->addTab('Местонахождение компании')
     ->addOption('ADDRESS', [
         'TITLE'   => 'Расположение офиса',
         'DEFAULT' => 'г. Уфа, ул. Тестовая, д. 28, стр. 1, офис 205',
@@ -17,8 +17,29 @@ return (new Builder)
         'DEFAULT' => '+7 (999) 123-45-69',
         'WIDTH'   => '400',
     ])
-    ->addOption('LINK_TO_SOCIAL_NETWORK', [
-        'TITLE'   => 'ссылки на соцсети',
+    ->addTab('Ссылки на соцсети')
+    ->addOption('LINK_TO_FASEBOOK', [
+        'TITLE'   => 'Ссылка на facebook',
+        'DEFAULT' => '',
+        'WIDTH'   => '400',
+    ])
+    ->addOption('LINK_TO_YOUTUBE', [
+        'TITLE'   => 'Ссылка на youtube',
+        'DEFAULT' => '',
+        'WIDTH'   => '400',
+    ])
+    ->addOption('LINK_TO_INSTAGRAM', [
+        'TITLE'   => 'Ссылка на instagram',
+        'DEFAULT' => '',
+        'WIDTH'   => '400',
+    ])
+    ->addOption('LINK_TO_TELEGRAM', [
+        'TITLE'   => 'Ссылка на telegram',
+        'DEFAULT' => '',
+        'WIDTH'   => '400',
+    ])
+    ->addOption('LINK_TO_VK', [
+        'TITLE'   => 'Ссылка на vk',
         'DEFAULT' => '',
         'WIDTH'   => '400',
     ])
@@ -30,6 +51,6 @@ return (new Builder)
     ])
     ->addOption('Dispatcher\'s working hours', [
         'TITLE'   => 'Время работы диспетчерской',
-        'DEFAULT' => 'Время работы диспетчерской: с 9:00 до 21:00, без выходных',
+        'DEFAULT' => 'с 9:00 до 21:00, без выходных',
         'WIDTH'   => '400',
     ]);
