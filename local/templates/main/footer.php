@@ -79,19 +79,6 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 
 
 <a class="back_to_top" title="><?= Loc::getMessage('UP'); ?>"></a>
-<?php
-$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . '/https://unpkg.com/swiper@7/swiper-bundle.min.js');
-?>
-<?php
-$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . '/js/main.js');
-?>
-<?php
-$APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . '/js/aos.js');
-?>
-<script>
-	AOS.init();
-</script>
-
 </body>
 
 </html>
