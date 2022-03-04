@@ -5,13 +5,15 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 use Bitrix\Main\Page\Asset;
 /*  подключаю стили  */
 
-Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/style.css');
 Asset::getInstance()
 	->addString('<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">');
 Asset::getInstance()
 	->addString('<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">');
 Asset::getInstance()
 	->addString('<link href="https://unpkg.com/swiper@7/swiper-bundle.min.css" rel="stylesheet">');
+Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/style.css');
+
+
 
 /* подключаю скрипты */
 Asset::getInstance()->addJs("https://unpkg.com/swiper@7/swiper-bundle.min.js");
