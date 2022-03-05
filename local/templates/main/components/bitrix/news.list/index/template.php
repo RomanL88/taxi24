@@ -21,15 +21,14 @@ $this->setFrameMode(true);
 			<!-- Slides -->
 			<div class="swiper-slide">
 				<div class="slide">
-					<div class="news-list">
-						<? foreach ($arResult["ITEMS"] as $arItem) : ?>
-							<div class="slide">
-								<img src="/local/templates/main/images/slider/slide1.png" alt="">
-							</div>
-						<? endforeach; ?>
-					</div>
+					<? foreach ($arResult["ITEMS"] as $arItem) : ?>
+						<div class="slide">
+							<!-- вписать в альт на след строке имя картинки -->
+							<img src="/local/templates/main/images/slider/slide1.png" alt="">
+						</div>
+					<? endforeach; ?>
 				</div>
 			</div>
 		</div>
-	<? endif; ?>
 	</div>
+<? endif; ?>
