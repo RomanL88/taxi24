@@ -16,8 +16,10 @@ Asset::getInstance()
 
 /* подключаю скрипты */
 Asset::getInstance()->addJs("https://unpkg.com/swiper@7/swiper-bundle.min.js");
-Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/main.js");
-Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/aos.js");
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "js/main.js");
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "js/aos.js");
+Asset::getInstance()
+	->addString("<script>AOS.init();</script>");
 Asset::getInstance()->addJs("https://unpkg.com/swiper@7/swiper-bundle.min.js");
 
 ?>
