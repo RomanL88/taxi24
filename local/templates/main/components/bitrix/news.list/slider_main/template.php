@@ -12,11 +12,7 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<?/* php echo '<pre>';
-var_dump($arResult["ITEMS"]);
-echo '</pre>';  */ ?>
 
-<!-- ЗДЕСЬ НАЧИНАЕТСЯ ШАБЛОН -->
 <? if ($arResult["ITEMS"]) : ?>
 	<div class="sub_header">
 		<!-- Slider main container -->
@@ -31,16 +27,12 @@ echo '</pre>';  */ ?>
 						$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 						$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 						?>
-						<div class="slide" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
-							<a href="<?= $arItem["DETAIL_PAGE_URL"] ?>">
-								<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" width="<?= $arItem["PREVIEW_PICTURE"]["WIDTH"] ?>" height="<?= $arItem["PREVIEW_PICTURE"]["HEIGHT"] ?>" alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>" title="<?= $arItem["PREVIEW_PICTURE"]["TITLE"] ?>" />
-							</a>
-						</div>
+						<a href="<?= $arItem["DETAIL_PAGE_URL"] ?>">
+							<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>" />
 					</div>
-				<? endforeach; ?>
 			</div>
+		<? endforeach; ?>
 		</div>
 	</div>
+	</div>
 <? endif; ?>
-<!-- ЗДЕСЬ КОНЧАЕТСЯ ШАБЛОН -->
-<!-- сделать переключатель слайдов как на боевом сайте -->

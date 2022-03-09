@@ -4,7 +4,7 @@ $APPLICATION->SetTitle("Главная");
 ?>
 <? $APPLICATION->IncludeComponent(
 	"bitrix:news.list",
-	"index",
+	"slider_main",
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "N",
