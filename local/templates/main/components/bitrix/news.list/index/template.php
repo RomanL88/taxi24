@@ -16,35 +16,31 @@ $this->setFrameMode(true);
 var_dump($arResult["ITEMS"]);
 echo '</pre>';  */ ?>
 
-
-
 <!-- ЗДЕСЬ НАЧИНАЕТСЯ ШАБЛОН -->
 <? if ($arResult["ITEMS"]) : ?>
-	<div class="swiper">
-		<div class="swiper-pagination">
-		</div>
-		<!-- Additional required wrapper -->
-		<div class="swiper-wrapper" style="max-width: 1440px">
-			<!-- Slides -->
-			<div class="swiper-slide">
-				<div class="slide">
-					<? foreach ($arResult["ITEMS"] as $arItem) : ?>
+	<div class="sub_header">
+		<!-- Slider main container -->
+		<div class="swiper">
+			<div class="swiper-pagination"></div>
+			<!-- Additional required wrapper -->
+			<div class="swiper-wrapper" style="max-width: 1440px">
+				<!-- Slides -->
+				<? foreach ($arResult["ITEMS"] as $arItem) : ?>
+					<div class="swiper-slide">
 						<?
 						$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 						$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 						?>
 						<div class="slide" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
-
 							<a href="<?= $arItem["DETAIL_PAGE_URL"] ?>">
-								<img class="preview_picture" src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" width="<?= $arItem["PREVIEW_PICTURE"]["WIDTH"] ?>" height="<?= $arItem["PREVIEW_PICTURE"]["HEIGHT"] ?>" alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>" title="<?= $arItem["PREVIEW_PICTURE"]["TITLE"] ?>" /></a>
-
+								<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" width="<?= $arItem["PREVIEW_PICTURE"]["WIDTH"] ?>" height="<?= $arItem["PREVIEW_PICTURE"]["HEIGHT"] ?>" alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>" title="<?= $arItem["PREVIEW_PICTURE"]["TITLE"] ?>" />
+							</a>
 						</div>
-					<? endforeach; ?>
-				</div>
+					</div>
+				<? endforeach; ?>
 			</div>
 		</div>
 	</div>
 <? endif; ?>
 <!-- ЗДЕСЬ КОНЧАЕТСЯ ШАБЛОН -->
-
 <!-- сделать переключатель слайдов как на боевом сайте -->
