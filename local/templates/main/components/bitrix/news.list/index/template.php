@@ -23,7 +23,7 @@ echo '</pre>';  */ ?>
 		<div class="swiper">
 			<div class="swiper-pagination"></div>
 			<!-- Additional required wrapper -->
-			<div class="swiper-wrapper" style="max-width: 1440px">
+			<div class="swiper-wrapper swiper-desktop" style="max-width: 1440px">
 				<!-- Slides -->
 				<? foreach ($arResult["ITEMS"] as $arItem) : ?>
 					<div class="swiper-slide">
