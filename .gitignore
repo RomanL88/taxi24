@@ -4,4 +4,3 @@ robots.txt
 /upload
 /vendor
 composer.lock
-test.php
