@@ -159,13 +159,13 @@ const swiper = new Swiper('.swiper', {
 	pagination: {
 		el: '.swiper-pagination',
 	},
-	// pagination: {
-	// 	el: '.swiper-pagination',
-	// 	clickable: true,
+	pagination: {
+		el: '.swiper-pagination',
+		clickable: true,
 	// 	renderBullet: function (index, className) {
 	// 		return '<span class="' + className + '">' + (menuSwiper[index]) + '</span>';
 	// 	},
-	// },
+	},
 	// Navigation arrows
 	navigation: {
 		nextEl: '.swiper-button-next',
@@ -176,9 +176,9 @@ const swiper = new Swiper('.swiper', {
 	// 	disableOnInteraction: false,
 	// },
 	// And if we need scrollbar
-	// scrollbar: {
-	// 	el: '.swiper-scrollbar',
-	// },
+	scrollbar: {
+		el: '.swiper-scrollbar',
+	},
 });
 
 // плавный скролл
@@ -234,14 +234,14 @@ function summ () {
 document.getElementById("hours").oninput = function() {
 	var value = (this.value-this.min)/(this.max-this.min)*100
 	// console.log(Number(String(value)[0])+1)
-	hours = (Number(String(value)[0])+1)
-	document.querySelector('#day__calc').textContent = (Number(String(value)[0])+1);
+	hours = (this.value)
+	document.querySelector('#day__calc').textContent = (this.value);
 	summ();
 	this.style.background = 'linear-gradient(to right, #FF8400 0%, #FF8400 ' + value + '%, #F0EFEE ' + value + '%, #F0EFEE 100%)'
 };
 
 document.getElementById("weeks").oninput = function() {
-	console.log(this.value)
+	// console.log(this.value)
 	var value = (this.value-this.min)/(this.max-this.min)*100
 	// console.log(value)
 	// console.log(Number(String(value)[0])+1)
@@ -257,7 +257,7 @@ document.getElementById("weeks").oninput = function() {
 };
 
 document.getElementById("fuel").oninput = function() {
-	console.log(this.value)
+	// console.log(this.value)
 	var value = (this.value-this.min)/(this.max-this.min)*100
 	// console.log(value)
 	// console.log('new val'+' '+Number(String(value)[0]))
@@ -267,7 +267,8 @@ document.getElementById("fuel").oninput = function() {
 	if (fix == 100) {endVal = 24} else if (newVal == 1) {endVal = 4} else if (newVal == 3) {endVal = 8} else if (newVal == 5) {endVal = 12} else if (newVal == 6) {endVal = 16} else if (newVal == 8) {endVal = 20}
 	// console.log('endVal'+'-' + endVal)
 	fuel = endVal
-	document.querySelector('#fuel__100').textContent = endVal;
+	fuel = (this.value)
+	document.querySelector('#fuel__100').textContent = (this.value);
 	summ();
 	this.style.background = 'linear-gradient(to right, #FF8400 0%, #FF8400 ' + value + '%, #F0EFEE ' + value + '%, #F0EFEE 100%)'
 };
