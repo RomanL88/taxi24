@@ -59,59 +59,72 @@ $APPLICATION->SetTitle("Главная");
 		"STRICT_SECTION_CHECK" => "N"
 	)
 ); ?>
-<section class="privilege" id="about">
-	<h2 class="text-center"></h2>
-	<h2 class="text-center">С нами удобно и выгодно</h2>
-	<div data-aos="fade-down" class="card-container">
-		<div class="card-item">
-			<div class="item-headline">
-				01.
-				<h2>Надежный<br>
-					таксопарк</h2>
-			</div>
-			<div class="item-desc">
-				У нас дружный коллектив, прозрачные условия работы, новые машины для аренды оснащенные световыми коробами, видео-регистраторами, детскими креслами и газовым оборудованием
-			</div>
-		</div>
-		<div class="card-image">
-			<img src="<?= SITE_TEMPLATE_PATH ?>/images/card-1.png" alt="">
-		</div>
-	</div>
-	<!---->
-	<div class="card-container card-container__noBg_reverse">
-		<div class="card-item">
-			<div data-aos="fade-right" class="item-headline">
-				02.
-				<h2>Прозрачные <br>
-					условия работы</h2>
-			</div>
-			<div data-aos="fade-left" class="item-desc">
-				<span>Прямая связь с директором таксопарка, новые машины для аренды, акции, розыгрыши ценных призов и бесплатных дней<br>
-					аренды</span>
-			</div>
-		</div>
-		<div data-aos="fade-right" class="card-image">
-			<img src="<?= SITE_TEMPLATE_PATH ?>/images/card-2.png" alt="">
-		</div>
-	</div>
-	<!---->
-	<div data-aos="fade-up" class="card-container">
-		<div class="card-item__privilege">
-			<div class="item-headline">
-				03.
-				<h2 style="max-width: 24rem">Выгода от долгосрочного сотрудничества</h2>
-			</div>
-			<div class="item-desc">
-				<span>Специальные условия для водителей<br>
-					и поощрительные бонусы при долгосрочном сотрудничестве</span>
-			</div>
-		</div>
-		<div class="card-image">
-			<img src="<?= SITE_TEMPLATE_PATH ?>/images/card-3.png" alt="">
-		</div>
-	</div>
-	<!---->
-</section>
+<!-- слайдер 1 - пробный  -->
+<? $APPLICATION->IncludeComponent(
+	"bitrix:news.list",
+	"about_block",
+	array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "N",
+		"DISPLAY_DATE" => "N",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"FILTER_NAME" => "",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "2",
+		"IBLOCK_TYPE" => "content",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"INCLUDE_SUBSECTIONS" => "Y",
+		"MESSAGE_404" => "",
+		"NEWS_COUNT" => "999",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "Новости",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"SET_BROWSER_TITLE" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "N",
+		"SET_META_KEYWORDS" => "N",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "N",
+		"SHOW_404" => "N",
+		"SORT_BY1" => "SORT",
+		"SORT_BY2" => "ACTIVE_FROM",
+		"SORT_ORDER1" => "ASC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N",
+		"COMPONENT_TEMPLATE" => "about_block"
+	),
+	false
+); ?>
 <section class="step" id="get_started">
 	<div class="container">
 		<h2 class="text-center step_h2">Начать работать через 30 минут!</h2>
