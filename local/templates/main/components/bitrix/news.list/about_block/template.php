@@ -22,8 +22,7 @@ Loc::loadLanguageFile(__FILE__);
 
 <section class="privilege" id="about">
 	<div class="container">
-		<!-- Надпись "С нами удобно и выгодно" - в lang файл -->
-		<h2 class="text-center"><a href="/about/"><?= Loc::getMessage("WHY_ARE_WE"); ?></a></h2>
+		<h2 class="text-center"><a href="<?= $arResult["ITEMS"][0]["LIST_PAGE_URL"]; ?>"><?= Loc::getMessage("WHY_ARE_WE"); ?></a></h2>
 		<? foreach ($arResult["ITEMS"] as $arItem) : ?>
 			<?
 			$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
@@ -33,8 +32,8 @@ Loc::loadLanguageFile(__FILE__);
 			<div data-aos="fade-down" class="card-container" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
 				<div class=" card-item">
 					<div class="item-headline">
-						<span><?= $arResult["ITEMS"][$kItem]["NUMBER"]; ?></span>
-						<h2><?= $arItem["NAME"] ?></h2>
+						<span><?= $arItem["NUMBER"]; ?></span>
+						<h2><?= $arItem["NAME"]; ?></h2>
 					</div>
 					<div class="item-desc">
 						<span><?= $arItem["PREVIEW_TEXT"]; ?></span>
