@@ -35,7 +35,7 @@ Loc::loadLanguageFile(__FILE__);
 			?>
 
 
-			<div data-aos="<?= $arItem["AOS_CONTAINER"]; ?>" class="<?= $arItem["CLASS_BLOCK"]; ?>" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
+			<div data-aos="<?= $arItem["AOS_CONTAINER"]; ?>" class="card-container<?= $arItem["CLASS_BLOCK"]; ?>" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
 				<div class="card-item">
 					<div data-aos="<?= $arItem["AOS_HEADING"]; ?>" class="item-headline">
 						<span><?= $arItem["NUMBER"]; ?></span>

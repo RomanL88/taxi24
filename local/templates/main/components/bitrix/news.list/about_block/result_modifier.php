@@ -7,33 +7,36 @@ foreach ($arResult["ITEMS"] as $kItem => $arItem) {
     $arResult["ITEMS"][$kItem]["NUMBER"] = sprintf("%'.02d.", $counter);
 
     /* АНИМАЦИЯ */
+    $aosContainer = '';
+    $classBlock = '';
+    $aosHeading = '';
+    $aosDescription = '';
+    $aosImage = '';
 
     switch ($divCounter) {
         case 1:
-            $arResult["ITEMS"][$kItem]["AOS_CONTAINER"] = "fade-down";
-            $arResult["ITEMS"][$kItem]["CLASS_BLOCK"] = "card-container";
-            $arResult["ITEMS"][$kItem]["AOS_HEADING"] = "";
-            $arResult["ITEMS"][$kItem]["AOS_DESCRIPTION"] = "";
-            $arResult["ITEMS"][$kItem]["AOS_IMAGE"] = "";
+            $aosContainer = "fade-down";
             break;
 
         case 2:
-            $arResult["ITEMS"][$kItem]["AOS_CONTAINER"] = "";
-            $arResult["ITEMS"][$kItem]["CLASS_BLOCK"] = "card-container card-container__noBg_reverse";
-            $arResult["ITEMS"][$kItem]["AOS_HEADING"] = "fade-right";
-            $arResult["ITEMS"][$kItem]["AOS_DESCRIPTION"] = "fade-left";
-            $arResult["ITEMS"][$kItem]["AOS_IMAGE"] = "fade-right";
+            $classBlock = " card-container__noBg_reverse";
+            $aosHeading = "fade-right";
+            $aosDescription = "fade-left";
+            $aosImage = "fade-right";
             break;
 
         case 3:
-            $arResult["ITEMS"][$kItem]["AOS_CONTAINER"] = "fade-up";
-            $arResult["ITEMS"][$kItem]["CLASS_BLOCK"] = "card-container";
-            $arResult["ITEMS"][$kItem]["AOS_HEADING"] = "";
-            $arResult["ITEMS"][$kItem]["AOS_DESCRIPTION"] = "";
-            $arResult["ITEMS"][$kItem]["AOS_IMAGE"] = "";
+            $aosContainer = "fade-up";
             break;
     }
-    /* сбросить счётчик $divCounter */
+
+    $arResult["ITEMS"][$kItem]["AOS_CONTAINER"]   = $aosContainer;
+    $arResult["ITEMS"][$kItem]["CLASS_BLOCK"]     = $classBlock;
+    $arResult["ITEMS"][$kItem]["AOS_HEADING"]     = $aosHeading;
+    $arResult["ITEMS"][$kItem]["AOS_DESCRIPTION"] = $aosDescription;
+    $arResult["ITEMS"][$kItem]["AOS_IMAGE"]       = $aosImage;
+
+    /* счётчики */
     if ($divCounter == 3) {
         $divCounter = 1;
     } else {
