@@ -59,7 +59,7 @@ $APPLICATION->SetTitle("Главная");
 		"STRICT_SECTION_CHECK" => "N"
 	)
 ); ?>
-<!-- слайдер 1 - пробный  -->
+
 <? $APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"about_block",
