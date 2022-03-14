@@ -79,6 +79,9 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 
 
 <a class="back_to_top" title="><?= Loc::getMessage('UP'); ?>"></a>
+<script>
+	AOS.init();
+</script>
 </body>
 
 </html>
