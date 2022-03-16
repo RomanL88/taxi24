@@ -22,11 +22,6 @@ Loc::loadLanguageFile(__FILE__);
 
 <section class="privilege" id="about">
 	<div class="container">
-		<?php
-		/* echo '<pre>';
-		var_dump($arResult);
-		echo '</pre>'; */
-		?>
 		<h2 class="text-center"><a href="<?= $arResult["LIST_PAGE_URL"]; ?>"><?= Loc::getMessage("WHY_ARE_WE"); ?></a></h2>
 		<? foreach ($arResult["ITEMS"] as $arItem) : ?>
 			<?

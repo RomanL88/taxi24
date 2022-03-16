@@ -5,8 +5,8 @@ $APPLICATION->SetTitle("О таксопарке");
 ?>
 <!-- подключить компонент news --><br>
 <? $APPLICATION->IncludeComponent(
-	"bitrix:news", 
-	"news", 
+	"bitrix:news",
+	"slider-benefits",
 	array(
 		"ADD_ELEMENT_CHAIN" => "N",
 		"ADD_SECTIONS_CHAIN" => "N",
@@ -35,10 +35,10 @@ $APPLICATION->SetTitle("О таксопарке");
 		"DETAIL_PAGER_TITLE" => "Страница",
 		"DETAIL_PROPERTY_CODE" => array(
 			0 => "",
-			1 => "detail_title",
-			2 => "[detail_title] Заголовок",
-			3 => "[descriprion] Описание анонса",
-			4 => "ATT_FILE",
+			1 => "[detail_title] Заголовок",
+			2 => "[descriprion] Описание анонса",
+			3 => "ATT_FILE",
+			4 => "",
 			5 => "",
 		),
 		"DETAIL_SET_CANONICAL_URL" => "N",
@@ -53,7 +53,7 @@ $APPLICATION->SetTitle("О таксопарке");
 		"IBLOCK_TYPE" => "content",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"LIST_FIELD_CODE" => array(
+		"PREVIEW_PICTURE" => array(
 			0 => "PREVIEW_PICTURE",
 			1 => "Название",
 			2 => "Картинка для анонса",

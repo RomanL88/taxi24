@@ -13,9 +13,9 @@
 $this->setFrameMode(true);
 ?>
 <!-- вернуться к списку -->
-<p><a href="<?= $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["news"] ?>"><?= 'Назад' ?></a></p>
+<p><a href="<?= $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["news"] ?>"><?= GetMessage('BACK'); ?></a></p>
 <!---->
-<? $ElementID = $APPLICATION->IncludeComponent(
+<? $APPLICATION->IncludeComponent(
 	"bitrix:news.detail",
 	"",
 	array(

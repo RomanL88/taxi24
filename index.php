@@ -574,11 +574,10 @@ $APPLICATION->SetTitle("Главная"); ?>
 			</form>
 		</div>
 	</div>
-</section> <br>
-<div class="container-img">
-	<img class="mobile-footer-img" src="/images/footer-m.png" alt="">
-	<div class="footer-img" alt=""></div>
-</div>
+	<div class="container-img">
+		<img class="mobile-footer-img" src="/images/footer-m.png" alt="">
+		<div class="footer-img" alt=""></div>
+	</div>
 </section> <br>
 <?
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php');
