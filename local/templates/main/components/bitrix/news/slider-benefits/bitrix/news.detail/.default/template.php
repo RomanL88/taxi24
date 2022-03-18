@@ -13,6 +13,13 @@
 $this->setFrameMode(true);
 ?>
 
+<?php
+
+use Bitrix\Main\Localization\Loc;
+
+Loc::loadMessages(__FILE__);
+?>
+
 <div class="news-detail">
 	<? if ($arParams["DISPLAY_PICTURE"] != "N" && is_array($arResult["DETAIL_PICTURE"])) : ?>
 		<img class="detail_picture" border="0" src="<?= $arResult["DETAIL_PICTURE"]["SRC"] ?>" width="<?= $arResult["DETAIL_PICTURE"]["WIDTH"] ?>" height="<?= $arResult["DETAIL_PICTURE"]["HEIGHT"] ?>" alt="<?= $arResult["DETAIL_PICTURE"]["ALT"] ?>" title="<?= $arResult["DETAIL_PICTURE"]["TITLE"] ?>" />
@@ -30,7 +37,7 @@ $this->setFrameMode(true);
 </div>
 
 <!-- добавить проверку на непустое значение -->
-<? if ($arResult["PROPERTIES"]["ATT_FILE"]["VALUE"] != "") : ?>
+<? if ($arResult["PROPERTIES"]["ATT_FILE"]["VALUE"]) : ?>
 	<!-- вывожу ссылку на загруженный файл -->
-	<a href="<?= CFile::GetPath($arResult["PROPERTIES"]["ATT_FILE"]["VALUE"]); ?>" download><?= GetMessage("DOWNLOAD_FILE") ?></a>
+	<a href="<?= CFile::GetPath($arResult["PROPERTIES"]["ATT_FILE"]["VALUE"]); ?>" download><?= Loc::getMessage("DOWNLOAD_FILE"); ?></a>
 <? endif; ?>

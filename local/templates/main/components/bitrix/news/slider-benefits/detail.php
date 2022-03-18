@@ -12,8 +12,18 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+
+
+<?php
+
+use Bitrix\Main\Localization\Loc;
+
+Loc::loadMessages(__FILE__);
+?>
+
+
 <!-- вернуться к списку -->
-<p><a href="<?= $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["news"] ?>"><?= GetMessage('BACK'); ?></a></p>
+<p><a href="<?= $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["news"] ?>"><?= Loc::getMessage('BACK'); ?></a></p>
 <!---->
 <? $APPLICATION->IncludeComponent(
 	"bitrix:news.detail",

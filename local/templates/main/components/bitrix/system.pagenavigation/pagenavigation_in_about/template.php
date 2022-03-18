@@ -3,6 +3,13 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
 $this->setFrameMode(true);
 
+
+use Bitrix\Main\Localization\Loc;
+
+Loc::loadMessages(__FILE__);
+
+
+
 if (!$arResult["NavShowAlways"]) {
     if ($arResult["NavRecordCount"] == 0 || ($arResult["NavPageCount"] == 1 && $arResult["NavShowAll"] == false))
         return;
@@ -58,20 +65,16 @@ $strNavQueryStringFull = ($arResult["NavQueryString"] != "" ? "?" . $arResult["N
                     <? $arResult["nStartPage"]++ ?>
                 <? endwhile ?>
 
-
-
                 |&nbsp;<a href="<?= $arResult["sUrlPath"] ?>?<?= $strNavQueryString ?>PAGEN_<?= $arResult["NavNum"] ?>=<?= ($arResult["NavPageNomer"] + 1) ?>">&raquo;</a>&nbsp;|&nbsp;
 
-
             <? endif ?>
-
 
             <? if ($arResult["bShowAll"]) : ?>
                 <noindex>
                     <? if ($arResult["NavShowAll"]) : ?>
-                        |&nbsp;<a href="<?= $arResult["sUrlPath"] ?>?<?= $strNavQueryString ?>SHOWALL_<?= $arResult["NavNum"] ?>=0" rel="nofollow"><?= GetMessage("nav_paged") ?></a>&nbsp;
+                        |&nbsp;<a href="<?= $arResult["sUrlPath"] ?>?<?= $strNavQueryString ?>SHOWALL_<?= $arResult["NavNum"] ?>=0" rel="nofollow"><?= Loc::getMessage("nav_paged") ?></a>&nbsp;
                     <? else : ?>
-                        |&nbsp;<a href="<?= $arResult["sUrlPath"] ?>?<?= $strNavQueryString ?>SHOWALL_<?= $arResult["NavNum"] ?>=1" rel="nofollow"><?= GetMessage("nav_all") ?></a>&nbsp;
+                        |&nbsp;<a href="<?= $arResult["sUrlPath"] ?>?<?= $strNavQueryString ?>SHOWALL_<?= $arResult["NavNum"] ?>=1" rel="nofollow"><?= Loc::getMessage("nav_all") ?></a>&nbsp;
                     <? endif ?>
                 </noindex>
             <? endif ?>
