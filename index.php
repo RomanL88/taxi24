@@ -1,120 +1,131 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
-$APPLICATION->SetTitle("Главная");
-?><? $APPLICATION->IncludeComponent(
-		"bitrix:news.list",
-		"slider_main",
-		array(
-			"ACTIVE_DATE_FORMAT" => "d.m.Y",
-			"ADD_SECTIONS_CHAIN" => "N",
-			"AJAX_MODE" => "N",
-			"AJAX_OPTION_ADDITIONAL" => "",
-			"AJAX_OPTION_HISTORY" => "N",
-			"AJAX_OPTION_JUMP" => "N",
-			"AJAX_OPTION_STYLE" => "Y",
-			"CACHE_FILTER" => "N",
-			"CACHE_GROUPS" => "Y",
-			"CACHE_TIME" => "36000000",
-			"CACHE_TYPE" => "A",
-			"CHECK_DATES" => "Y",
-			"DETAIL_URL" => "",
-			"DISPLAY_BOTTOM_PAGER" => "Y",
-			"DISPLAY_DATE" => "N",
-			"DISPLAY_NAME" => "Y",
-			"DISPLAY_PICTURE" => "Y",
-			"DISPLAY_PREVIEW_TEXT" => "Y",
-			"DISPLAY_TOP_PAGER" => "N",
-			"FIELD_CODE" => array("", ""),
-			"FILTER_NAME" => "",
-			"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-			"IBLOCK_ID" => "1",
-			"IBLOCK_TYPE" => "index",
-			"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-			"INCLUDE_SUBSECTIONS" => "Y",
-			"MESSAGE_404" => "",
-			"NEWS_COUNT" => "20",
-			"PAGER_BASE_LINK_ENABLE" => "N",
-			"PAGER_DESC_NUMBERING" => "N",
-			"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-			"PAGER_SHOW_ALL" => "N",
-			"PAGER_SHOW_ALWAYS" => "N",
-			"PAGER_TEMPLATE" => ".default",
-			"PAGER_TITLE" => "Новости",
-			"PARENT_SECTION" => "",
-			"PARENT_SECTION_CODE" => "",
-			"PREVIEW_TRUNCATE_LEN" => "",
-			"PROPERTY_CODE" => array("", ""),
-			"SET_BROWSER_TITLE" => "N",
-			"SET_LAST_MODIFIED" => "N",
-			"SET_META_DESCRIPTION" => "N",
-			"SET_META_KEYWORDS" => "N",
-			"SET_STATUS_404" => "N",
-			"SET_TITLE" => "N",
-			"SHOW_404" => "N",
-			"SORT_BY1" => "SORT",
-			"SORT_BY2" => "ACTIVE_FROM",
-			"SORT_ORDER1" => "ASC",
-			"SORT_ORDER2" => "ASC",
-			"STRICT_SECTION_CHECK" => "N"
-		)
-	); ?> <? $APPLICATION->IncludeComponent(
-				"bitrix:news.list",
-				"about_block",
-				array(
-					"ACTIVE_DATE_FORMAT" => "d.m.Y",
-					"ADD_SECTIONS_CHAIN" => "N",
-					"AJAX_MODE" => "N",
-					"AJAX_OPTION_ADDITIONAL" => "",
-					"AJAX_OPTION_HISTORY" => "N",
-					"AJAX_OPTION_JUMP" => "N",
-					"AJAX_OPTION_STYLE" => "Y",
-					"CACHE_FILTER" => "N",
-					"CACHE_GROUPS" => "Y",
-					"CACHE_TIME" => "36000000",
-					"CACHE_TYPE" => "A",
-					"CHECK_DATES" => "Y",
-					"COMPONENT_TEMPLATE" => "about_block",
-					"DETAIL_URL" => "",
-					"DISPLAY_BOTTOM_PAGER" => "N",
-					"DISPLAY_DATE" => "N",
-					"DISPLAY_NAME" => "Y",
-					"DISPLAY_PICTURE" => "Y",
-					"DISPLAY_PREVIEW_TEXT" => "Y",
-					"DISPLAY_TOP_PAGER" => "N",
-					"FIELD_CODE" => array(0 => "", 1 => "",),
-					"FILTER_NAME" => "",
-					"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-					"IBLOCK_ID" => "2",
-					"IBLOCK_TYPE" => "content",
-					"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-					"INCLUDE_SUBSECTIONS" => "Y",
-					"MESSAGE_404" => "",
-					"NEWS_COUNT" => "999",
-					"PAGER_BASE_LINK_ENABLE" => "N",
-					"PAGER_DESC_NUMBERING" => "N",
-					"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-					"PAGER_SHOW_ALL" => "N",
-					"PAGER_SHOW_ALWAYS" => "N",
-					"PAGER_TEMPLATE" => ".default",
-					"PAGER_TITLE" => "Новости",
-					"PARENT_SECTION" => "",
-					"PARENT_SECTION_CODE" => "",
-					"PREVIEW_TRUNCATE_LEN" => "",
-					"PROPERTY_CODE" => array(0 => "", 1 => "",),
-					"SET_BROWSER_TITLE" => "N",
-					"SET_LAST_MODIFIED" => "N",
-					"SET_META_DESCRIPTION" => "N",
-					"SET_META_KEYWORDS" => "N",
-					"SET_STATUS_404" => "N",
-					"SET_TITLE" => "N",
-					"SHOW_404" => "N",
-					"SORT_BY1" => "SORT",
-					"SORT_BY2" => "ACTIVE_FROM",
-					"SORT_ORDER1" => "ASC",
-					"SORT_ORDER2" => "ASC",
-					"STRICT_SECTION_CHECK" => "N"
-				)
-			); ?> <section class="step" id="get_started">
+$APPLICATION->SetTitle("Главная"); ?>
+<? $APPLICATION->IncludeComponent(
+	"bitrix:news.list",
+	"slider_main",
+	array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "Y",
+		"DISPLAY_DATE" => "N",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FIELD_CODE" => array("", ""),
+		"FILTER_NAME" => "",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "1",
+		"IBLOCK_TYPE" => "index",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"INCLUDE_SUBSECTIONS" => "Y",
+		"MESSAGE_404" => "",
+		"NEWS_COUNT" => "20",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "Новости",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"PROPERTY_CODE" => array("", ""),
+		"SET_BROWSER_TITLE" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "N",
+		"SET_META_KEYWORDS" => "N",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "N",
+		"SHOW_404" => "N",
+		"SORT_BY1" => "SORT",
+		"SORT_BY2" => "ACTIVE_FROM",
+		"SORT_ORDER1" => "ASC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N"
+	)
+); ?>
+
+<? $APPLICATION->IncludeComponent(
+	"bitrix:news.list",
+	"about_block",
+	array(
+		"ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"ADD_SECTIONS_CHAIN" => "N",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"DETAIL_URL" => "",
+		"DISPLAY_BOTTOM_PAGER" => "N",
+		"DISPLAY_DATE" => "N",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"FILTER_NAME" => "",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "2",
+		"IBLOCK_TYPE" => "content",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"INCLUDE_SUBSECTIONS" => "Y",
+		"MESSAGE_404" => "",
+		"NEWS_COUNT" => "999",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "Новости",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"SET_BROWSER_TITLE" => "N",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_META_DESCRIPTION" => "N",
+		"SET_META_KEYWORDS" => "N",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "N",
+		"SHOW_404" => "N",
+		"SORT_BY1" => "SORT",
+
+		"SORT_BY2" => "ACTIVE_FROM",
+		"SORT_ORDER1" => "ASC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N",
+		"COMPONENT_TEMPLATE" => "about_block"
+	),
+	false
+); ?>
+<section class="step" id="get_started">
 	<div class="container">
 		<h2 class="text-center step_h2">Начать работать через 30 минут!</h2>
 		<div class="content">
@@ -275,20 +286,14 @@ $APPLICATION->SetTitle("Главная");
 			<div class="winner-img">
 				<img src="/local/templates/main/images/winner.png" alt="">
 			</div>
-			<div class="winner_name">
-				Иван И.
-			</div>
-			<div class="winner_desc">
-				<div>
-					Поздравляем Ивана!
-				</div>
-				<div>
-					Приз: Iphone 12 Pro
-				</div>
+			<div>
+				Приз: Iphone 12 Pro
 			</div>
 		</div>
-		<div class="back-ground">
-		</div>
+	</div>
+
+	<div class="back-ground">
+	</div>
 	</div>
 </section>
 <section class="calc" id="payment">
@@ -303,6 +308,7 @@ $APPLICATION->SetTitle("Главная");
 					<input id="hours" type="range" min="1" max="10" value="6" step="1">
 					<div class="ticks">
 						<!-- You could generate the ticks based on your min, max & step values. --> <span class="tick">1</span> <span class="tick">2</span> <span class="tick">3</span> <span class="tick">4</span> <span class="tick">5</span> <span class="tick">6</span> <span class="tick">7</span> <span class="tick">8</span> <span class="tick">9</span> <span class="tick">10</span>
+
 					</div>
 				</div>
 				<!--  -->
@@ -324,6 +330,7 @@ $APPLICATION->SetTitle("Главная");
 					<div class="ticks">
 						<!-- You could generate the ticks based on your min, max & step values. --> <span class="tick">1</span> <span class="tick">4</span> <span class="tick">8</span> <span class="tick">12</span> <span class="tick">16</span> <span class="tick">20</span> <span class="tick">24</span>
 					</div>
+
 				</div>
 				<p>
 					Примерный заработок в месяц
@@ -561,7 +568,8 @@ $APPLICATION->SetTitle("Главная");
 				</div>
 				<br>
 				<div>
-					<input class="form_btn" type="submit" name="submit_btn" value="Отправить заявку">
+					<input class="form_btn" type="submit" name="submit_btn" value="Отправить заявку"><br>
+					<br>
 				</div>
 			</form>
 		</div>
