@@ -16,7 +16,8 @@ if ($arResult["isFormErrors"] == "Y") : ?>
             <!-- УТОЧНИТЬ НЕОБХОДИМОСТЬ ЭТОГО -->
             <!-- из видео: форма может не отправится, так как name="web_form_submit" уже не относится к serialize  
                 поэтому сделаем ещё 1 скрытое поле -->
-            <input type="hidden" name="web_form_submit" value="<?= $arResult["arForm"]["BUTTON"]; ?>" />
+
+            <input type="hidden" name="web_form_submit" value="<?php echo $arResult["arForm"]["BUTTON"];  ?>" />
 
             <!-- ИМЯ -->
             <div>
@@ -50,18 +51,16 @@ if ($arResult["isFormErrors"] == "Y") : ?>
 
             <?= $arResult["FORM_FOOTER"] ?>
         </div>
-
-        <?
-        echo '<pre>';
-        var_dump($arResult["arForm"]["DESCRIPTION"]);
-        echo '</pre>';
-        ?>
-
     </div>
+    <?
+    echo '<pre>';
+    var_dump($arResult);
+    echo '</pre>';
+    ?>
     <div class="container-img">
         <img class="mobile-footer-img" src="<?= SITE_TEMPLATE_PATH; ?>/images/footer-m.png" alt="">
         <!-- нижняя картинка не подключается -->
-        <div class="footer-img" alt="" style="background-image:url(" <?= SITE_TEMPLATE_PATH . '/images/footer-form.png' ?> ");>
+        <div class="footer-img" alt="" style="background-image:url( <?= SITE_TEMPLATE_PATH ?>/images/footer-form.png );">
         </div>
     </div>
 

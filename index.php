@@ -599,7 +599,7 @@ $APPLICATION->SetTitle("Главная");
 			0 => "",
 			1 => "",
 		),
-		"RESULT_ID" => $_REQUEST[RESULT_ID],
+		"RESULT_ID" => $_REQUEST["RESULT_ID"],
 		"SEF_MODE" => "N",
 		"SHOW_ADDITIONAL" => "N",
 		"SHOW_ANSWER_VALUE" => "N",
@@ -613,11 +613,11 @@ $APPLICATION->SetTitle("Главная");
 		"WEB_FORM_ID" => "6",
 		"COMPONENT_TEMPLATE" => "main-form",
 		"VARIABLE_ALIASES" => array(
-			"action" => "action",
+			"action" => "?WEB_FORM_ID=6",
 		)
 	),
 	false
-); ?><br>
+);   ?><br>
 <br><?
 	require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php');
 	?>
