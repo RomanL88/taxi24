@@ -13,12 +13,6 @@ if ($arResult["isFormErrors"] == "Y") : ?>
 
             <?= $arResult["FORM_HEADER"] ?>
 
-            <!-- УТОЧНИТЬ НЕОБХОДИМОСТЬ ЭТОГО -->
-            <!-- из видео: форма может не отправится, так как name="web_form_submit" уже не относится к serialize  
-                поэтому сделаем ещё 1 скрытое поле -->
-
-            <input type="hidden" name="web_form_submit" value="<?php echo $arResult["arForm"]["BUTTON"];  ?>" />
-
             <!-- ИМЯ -->
             <div>
                 <?= GetMessage('NAME'); ?>
