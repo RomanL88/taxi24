@@ -1,7 +1,6 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
-$APPLICATION->SetTitle("Главная");
-?>
+$APPLICATION->SetTitle("Главная"); ?>
 <? $APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"slider_main",
@@ -117,6 +116,7 @@ $APPLICATION->SetTitle("Главная");
 		"SET_TITLE" => "N",
 		"SHOW_404" => "N",
 		"SORT_BY1" => "SORT",
+
 		"SORT_BY2" => "ACTIVE_FROM",
 		"SORT_ORDER1" => "ASC",
 		"SORT_ORDER2" => "ASC",
@@ -286,20 +286,14 @@ $APPLICATION->SetTitle("Главная");
 			<div class="winner-img">
 				<img src="<?= SITE_TEMPLATE_PATH ?>/images/winner.png" alt="">
 			</div>
-			<div class="winner_name">
-				Иван И.
-			</div>
-			<div class="winner_desc">
-				<div>
-					Поздравляем Ивана!
-				</div>
-				<div>
-					Приз: Iphone 12 Pro
-				</div>
+			<div>
+				Приз: Iphone 12 Pro
 			</div>
 		</div>
-		<div class="back-ground">
-		</div>
+	</div>
+
+	<div class="back-ground">
+	</div>
 	</div>
 </section>
 <section class="calc" id="payment">
@@ -314,6 +308,7 @@ $APPLICATION->SetTitle("Главная");
 					<input id="hours" type="range" min="1" max="10" value="6" step="1">
 					<div class="ticks">
 						<!-- You could generate the ticks based on your min, max & step values. --> <span class="tick">1</span> <span class="tick">2</span> <span class="tick">3</span> <span class="tick">4</span> <span class="tick">5</span> <span class="tick">6</span> <span class="tick">7</span> <span class="tick">8</span> <span class="tick">9</span> <span class="tick">10</span>
+
 					</div>
 				</div>
 				<!--  -->
@@ -335,6 +330,7 @@ $APPLICATION->SetTitle("Главная");
 					<div class="ticks">
 						<!-- You could generate the ticks based on your min, max & step values. --> <span class="tick">1</span> <span class="tick">4</span> <span class="tick">8</span> <span class="tick">12</span> <span class="tick">16</span> <span class="tick">20</span> <span class="tick">24</span>
 					</div>
+
 				</div>
 				<p>
 					Примерный заработок в месяц
@@ -572,7 +568,8 @@ $APPLICATION->SetTitle("Главная");
 				</div>
 				<br>
 				<div>
-					<input class="form_btn" type="submit" name="submit_btn" value="Отправить заявку">
+					<input class="form_btn" type="submit" name="submit_btn" value="Отправить заявку"><br>
+					<br>
 				</div>
 			</form>
 		</div>
@@ -581,6 +578,7 @@ $APPLICATION->SetTitle("Главная");
 		<img class="mobile-footer-img" src="/images/footer-m.png" alt="">
 		<div class="footer-img" alt=""></div>
 	</div>
-</section> <br><?
-				require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php');
-				?>
+</section> <br>
+<?
+require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php');
+?>

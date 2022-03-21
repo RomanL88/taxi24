@@ -10,7 +10,6 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	die();
 
 ?>
-
 <footer id="footer">
 	<!--  desktop-->
 	<div class="container container-footer">
@@ -36,6 +35,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 
 			<div class="footer-item">
 				<div class="">
+
 					<a href="tel:<?= sprint_options_get('NUMBER') ?>" class="gray bt"><?= sprint_options_get('NUMBER') ?></a><br>
 
 					<a href="<?= sprint_options_get('LINK_TO_FASEBOOK') ?>" target="_blank"><img src="<?= SITE_TEMPLATE_PATH ?>/images/facebook.svg" alt=""></a>
