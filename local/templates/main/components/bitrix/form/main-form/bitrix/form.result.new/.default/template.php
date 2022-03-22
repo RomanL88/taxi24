@@ -1,9 +1,13 @@
 <?
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
-if ($arResult["isFormErrors"] == "Y") : ?>
-    <?= $arResult["FORM_ERRORS_TEXT"]; ?>
-<? endif; ?>
+/* вывод ошибок */
+//if ($arResult["isFormErrors"] == "Y") : 
+?>
+<? //echo $arResult["FORM_ERRORS_TEXT"]; 
+?>
+<? //endif; 
+?>
 
 <section class="footer-form" id="feedback">
     <div class="container__form">
@@ -51,7 +55,7 @@ if ($arResult["isFormErrors"] == "Y") : ?>
     <?
     echo '<pre>';
     //var_dump($_POST);
-    var_dump($_arResult);
+    var_dump($arResult);
     echo '</pre>';
     ?>
 
@@ -85,11 +89,11 @@ if ($arResult["isFormErrors"] == "Y") : ?>
             //пишем примитивный текст письма
 
             echo 'Результат №' . $RESULT_ID . ' отправлен' . '<br>';
-            echo 'С вами свяжутся в близжайшее время! ';
-            echo '<pre>';
-            //var_dump($_POST);
+            echo '<b>С вами свяжутся в близжайшее время! </b> ';
+            /* echo '<pre>';
+            var_dump($_POST);
             var_dump($arValues);
-            echo '</pre>';
+            echo '</pre>'; */
         } else {
             global $strError;
             echo $strError;
