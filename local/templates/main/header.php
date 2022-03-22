@@ -12,6 +12,10 @@ Asset::getInstance()
 	->addString('<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">');
 Asset::getInstance()
 	->addString('<link href="https://unpkg.com/swiper@7/swiper-bundle.min.css" rel="stylesheet">');
+/* пробую простилизовать бэкграунд формы на индексе */
+Asset::getInstance()
+	->addString('<style> .footer-img  { background-image:url("<?= SITE_TEMPLATE_PATH; ?> . /images/footer-form.png ") } </style>');
+
 
 /* подключаю скрипты */
 Asset::getInstance()->addJs("https://unpkg.com/swiper@7/swiper-bundle.min.js");
@@ -30,7 +34,8 @@ Asset::getInstance()->addJs("https://unpkg.com/swiper@7/swiper-bundle.min.js");
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title><?php $APPLICATION->ShowTitle(); ?></title>
-	<?php $APPLICATION->ShowHead(); //выведет все нужные теги
+	<?php
+	$APPLICATION->ShowHead(); //выведет все нужные теги
 	?>
 </head>
 
