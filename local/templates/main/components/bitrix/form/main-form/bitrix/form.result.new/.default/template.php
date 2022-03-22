@@ -12,6 +12,7 @@ if ($arResult["isFormErrors"] == "Y") : ?>
             <br><br>
 
             <?= $arResult["FORM_HEADER"] ?>
+            <input type="hidden" name="web_form_submit" value="Y">
 
             <!-- ИМЯ -->
             <div>
@@ -46,14 +47,58 @@ if ($arResult["isFormErrors"] == "Y") : ?>
             <?= $arResult["FORM_FOOTER"] ?>
         </div>
     </div>
+
     <?
     echo '<pre>';
-    var_dump($arResult);
+    //var_dump($_POST);
+    var_dump($_arResult);
     echo '</pre>';
     ?>
+
+    <?php
+    if (isset($_POST['name']) && isset($_POST['phone']) && isset($_POST['chk'])) {
+
+
+        //проверяем на наличие значений в массиве $_POST
+        if (isset($_POST['name']))   $name = $_POST['name'];
+        if (isset($_POST['chk']))     $chk = $_POST['chk'];
+        if (isset($_POST['phone'])) $phone = $_POST['phone'];
+
+        //формируем массив с параметрами ID полей
+        $arValues = array(
+            /* "NAME_FIELD_32" => $name,
+            "SEND_DATA_33" => $chk,
+            "PHONE_FIELD_34" => $phone, */
+            "form_text_32" => $name,
+            "form_checkbox_33" => $chk,
+            "form_text_34" => $phone,
+        );
+
+        //задаем ID нашей формы, можно глянуть в админке
+        $FORM_ID = 9;
+        //подключаем модуль форм, т.к. без него скорей всего будет ошибка
+        CModule::IncludeModule("form");
+
+        //если результат добавился в веб форму, передаем ID и поля
+        if ($RESULT_ID = CFormResult::Add($FORM_ID, $arValues)) {
+
+            //пишем примитивный текст письма
+
+            echo 'Результат №' . $RESULT_ID . ' отправлен' . '<br>';
+            echo 'С вами свяжутся в близжайшее время! ';
+            echo '<pre>';
+            //var_dump($_POST);
+            var_dump($arValues);
+            echo '</pre>';
+        } else {
+            global $strError;
+            echo $strError;
+        }
+    }   ?>
+
+
     <div class="container-img">
         <img class="mobile-footer-img" src="<?= SITE_TEMPLATE_PATH; ?>/images/footer-m.png" alt="">
-        <!-- нижняя картинка не подключается -->
         <div class="footer-img" alt="" style="background-image:url( <?= SITE_TEMPLATE_PATH ?>/images/footer-form.png );">
         </div>
     </div>
